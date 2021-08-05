@@ -1,5 +1,5 @@
 plugins {
-    id 'java-library' //легковеснее, чем java
+    id 'java-library'
 }
 
 repositories {
@@ -7,18 +7,18 @@ repositories {
 }
 
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'  //работа с русс.яз.
-    sourceCompatibility = 11 //указание версии java
+    options.encoding = 'UTF-8'
+    sourceCompatibility = 11
     targetCompatibility = 11
 }
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:5.22.3", //selenide
-            "org.junit.jupiter:junit-jupiter:5.7.2") //junit5
+            "com.codeborne:selenide:5.22.3",
+            "org.junit.jupiter:junit-jupiter:5.7.2")
     testRuntimeOnly(
-            "org.junit.jupiter:junit-jupiter-engine:5.7.2", //junit5
-            "org.slf4j:slf4j-simple:1.7.30") //selenide, логи чтобы не выводилось ничего лишнего в консоль
+            "org.junit.jupiter:junit-jupiter-engine:5.7.2",
+            "org.slf4j:slf4j-simple:1.7.30")
 }
 
 test {
